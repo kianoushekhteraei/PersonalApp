@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_sample_home"
+    android:layout_width="@dimen/margin_190dp"
+    android:layout_height="@dimen/margin_180dp"
+    android:layout_marginTop="@dimen/margin_10dp"
+    android:layout_marginLeft="@dimen/margin_15dp"
+    android:background="@drawable/edt_bg"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_sample_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:src="@drawable/tom_hardy"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+
+    <ImageView
+        android:id="@+id/iv_off_home"
+        android:layout_width="@dimen/margin_35dp"
+        android:layout_height="@dimen/margin_35dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:background="@drawable/circle_green"
+        app:layout_constraintRight_toRightOf="@id/cl_sample_home"
+        app:layout_constraintTop_toTopOf="@id/cl_sample_home" />
+
+
+    <TextView
+        android:id="@+id/tv_percent_off_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:text="%"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_off_home"
+        app:layout_constraintRight_toRightOf="@id/iv_off_home"
+        app:layout_constraintTop_toTopOf="@id/iv_off_home" />
+
+    <TextView
+        android:id="@+id/tv_off_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_off_home"
+        app:layout_constraintRight_toLeftOf="@id/tv_percent_off_home"
+        app:layout_constraintTop_toTopOf="@id/iv_off_home" />
+
+    <TextView
+        android:id="@+id/tv_sample_name_prd_Home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:text="شال"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/iv_sample_home"
+        app:layout_constraintRight_toRightOf="@id/iv_sample_home"
+        app:layout_constraintTop_toBottomOf="@id/iv_sample_home" />
+
+
+    <TextView
+        android:id="@+id/tv_bprice_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:layout_marginBottom="@dimen/margin_10dp"
+        android:text="120000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_sample_name_prd_Home"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_tooman_bprice_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:text="تومان"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_bprice_home"
+        app:layout_constraintRight_toLeftOf="@id/tv_bprice_home"
+        app:layout_constraintTop_toTopOf="@id/tv_bprice_home" />
+
+    <TextView
+        android:id="@+id/tv_aprice_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:text="100000"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin_5dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bprice_home"
+        app:layout_constraintRight_toLeftOf="@id/tv_tooman_bprice_home"
+        app:layout_constraintTop_toTopOf="@id/tv_bprice_home" />
+
+    <TextView
+        android:id="@+id/tv_tooman_aprice_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="تومان"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_13sp"
+        android:textStyle="bold"
+        android:layout_marginRight="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_aprice_home"
+        app:layout_constraintRight_toLeftOf="@id/tv_aprice_home"
+        app:layout_constraintTop_toTopOf="@id/tv_aprice_home" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@color/green_4ac58e"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bprice_home"
+        app:layout_constraintLeft_toLeftOf="@id/tv_bprice_home"
+        app:layout_constraintRight_toRightOf="@id/tv_bprice_home"
+        app:layout_constraintTop_toTopOf="@id/tv_bprice_home" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

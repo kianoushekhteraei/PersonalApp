@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_BFBFBF"
+    android:id="@+id/cl_all_exit"
+    tools:context=".Project.Act_Exit_Profile">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+
+        android:id="@+id/iv_exit_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/tom_hardy"
+        android:layout_marginTop="@dimen/margin_30dp"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_name_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:textColor="@color/black"
+        android:text="TOM HARDY"
+        android:textSize="@dimen/font_22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/iv_exit_profile"
+        app:layout_constraintRight_toRightOf="@id/iv_exit_profile"
+        app:layout_constraintLeft_toLeftOf="@id/iv_exit_profile"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cl_circle"
+        android:layout_marginTop="@dimen/margin_50dp">
+
+        <TextView
+            android:id="@+id/tv_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="آیا مایل به خروج از حساب کابری خود می باشید؟"
+            android:textColor="@color/black"
+            android:paddingBottom="50dp"
+            android:paddingTop="90dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@color/red_f50000"
+            android:text="بله"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog"
+            app:layout_constraintWidth_percent="0.5" />
+
+
+        <Button
+            android:id="@+id/btn_not_exit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="خیر"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/green_4ac58e"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog"
+            app:layout_constraintWidth_percent="0.5"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_circle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circle_white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_exit"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/iv_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logout_red"
+            android:layout_marginRight="@dimen/margin_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

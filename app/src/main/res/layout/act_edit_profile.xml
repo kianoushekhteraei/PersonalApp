@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_BFBFBF"
+    tools:context=".Project.Act_Edit_Profile">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_edit_frg_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:src="@drawable/tom_hardy"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/edt_name_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:background="@drawable/edt_name_bg"
+                android:text="TOM HARDY"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                android:maxLength="30"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="@id/iv_edit_profile"
+                app:layout_constraintRight_toRightOf="@id/iv_edit_profile"
+                app:layout_constraintTop_toBottomOf="@id/iv_edit_profile" />
+
+
+            <TextView
+                android:id="@+id/tv_title_city_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_40dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="شهر محل سکونت"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_name_edit_profile" />
+
+
+            <Spinner
+                android:id="@+id/spinner_city_edt_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/edt_bg"
+                android:padding="@dimen/padding_10dp"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_city_edit_profile"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <TextView
+                android:id="@+id/tv_title_gender_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="جنسیت"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_city_edt_profile" />
+
+
+            <Spinner
+                android:id="@+id/spinner_gender_edit_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/edt_bg"
+                android:padding="@dimen/padding_10dp"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_gender_edit_profile"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <TextView
+                android:id="@+id/tv_title_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="شماره همراه"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/spinner_gender_edit_profile" />
+
+
+            <EditText
+                android:id="@+id/number_edit_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/edt_bg"
+                android:hint="09388393291"
+                android:inputType="number"
+                android:maxLength="20"
+                android:padding="@dimen/padding_10dp"
+                android:textColor="@color/black"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_number"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <TextView
+                android:id="@+id/tv_title_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="آدرس ایمیل"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/number_edit_profile" />
+
+
+            <EditText
+                android:id="@+id/email_edit_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/edt_bg"
+                android:hint="kiaet96gmail.com"
+                android:maxLength="20"
+                android:padding="@dimen/padding_10dp"
+                android:textColor="@color/black"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_email"
+                app:layout_constraintWidth_percent="0.9" />
+
+
+            <TextView
+                android:id="@+id/tv_title_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_20dp"
+                android:text="کد معرف"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_20sp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/email_edit_profile" />
+
+            <EditText
+                android:id="@+id/code_edit_profile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:background="@drawable/edt_bg"
+                android:hint="8327492"
+                android:inputType="number"
+                android:maxLength="20"
+                android:padding="@dimen/padding_10dp"
+                android:textColor="@color/black"
+                app:layout_constraintHeight_percent="0.055"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_code"
+                app:layout_constraintWidth_percent="0.9" />
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="@dimen/margin_120dp"
+                android:layout_height="@dimen/margin_40dp"
+                android:layout_marginTop="@dimen/margin_30dp"
+                android:layout_marginBottom="@dimen/margin_40dp"
+                android:background="@drawable/btn_shape"
+                android:text="ثبت اطلاعات"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/code_edit_profile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

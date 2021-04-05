@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Verification.Act_Verify_Code"
+    android:background="@color/gray_BFBFBF">
+
+    <ImageView
+        android:id="@+id/iv_logo_verify_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_small"
+        android:layout_marginTop="@dimen/margin_40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/tv_verify_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="لطفا کد دریافت شده را وارد نمایید"
+        android:textSize="@dimen/font_20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginRight="@dimen/margin_20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <EditText
+        android:id="@+id/edt_verify_code"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edt_bg"
+        android:layout_marginTop="@dimen/margin_15dp"
+        android:inputType="number"
+        android:maxLength="20"
+        android:padding="@dimen/padding_10dp"
+        android:textColor="@color/black"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/tv_verify_code"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+    <Button
+        android:id="@+id/btn_verify_code"
+        android:layout_width="@dimen/margin_120dp"
+        android:layout_height="@dimen/margin_40dp"
+        android:background="@drawable/btn_shape"
+        android:layout_marginBottom="@dimen/margin_40dp"
+        android:textColor="@color/black"
+        android:text=" تکمیل ثبت نام"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

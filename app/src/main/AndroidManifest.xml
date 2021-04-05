@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="andriod.bingnerdranch.kia">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Project.Act_Buy_Product"></activity>
+        <activity android:name=".Project.Act_Detail_All_Home" />
+        <activity android:name=".Project.Act_Rv_Most_View" />
+        <activity android:name=".Project.Act_Rv_Most_Off" />
+        <activity android:name=".Project.Act_Rv_New_Prd" />
+        <activity android:name=".Project.Act_Detail_Home" />
+        <activity android:name=".Project.Act_Exit_Profile" />
+        <activity android:name=".Project.Act_Edit_Profile" />
+        <activity android:name=".Project.Act_Detail_Tabs" />
+        <activity android:name=".Sign_Up.Act_Sign_Up" />
+        <activity android:name=".Verification.Act_Verify_Code" />
+        <activity android:name=".Verification.Act_Verification" />
+        <activity android:name=".Project.Act_Connect" />
+        <activity android:name=".Splash.Act_Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Project.MainActivity" />
+    </application>
+
+</manifest>

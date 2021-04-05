@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_sample_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_8dp"
+    android:layout_marginBottom="@dimen/margin_8dp"
+    android:background="@drawable/sample_rv_bg"
+    android:layout_marginLeft="@dimen/margin_8dp"
+    android:layout_marginRight="@dimen/margin_8dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_sample_tabs"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:src="@drawable/tom_hardy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.35" />
+
+
+    <ImageView
+        android:id="@+id/iv_off_tabs"
+        android:layout_width="@dimen/margin_40dp"
+        android:layout_height="@dimen/margin_40dp"
+        android:layout_marginTop="@dimen/margin_5dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:background="@drawable/circle_green"
+        app:layout_constraintRight_toRightOf="@id/cl_sample_tabs"
+        app:layout_constraintTop_toTopOf="@id/cl_sample_tabs" />
+
+
+    <TextView
+        android:id="@+id/tv_percent_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:text="%"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_off_tabs"
+        app:layout_constraintRight_toRightOf="@id/iv_off_tabs"
+        app:layout_constraintTop_toTopOf="@id/iv_off_tabs" />
+
+    <TextView
+        android:id="@+id/tv_off_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_off_tabs"
+        app:layout_constraintRight_toLeftOf="@id/tv_percent_off"
+        app:layout_constraintTop_toTopOf="@id/iv_off_tabs" />
+
+    <TextView
+        android:id="@+id/tv_sample_name_prd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:text="شال"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_22sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@id/cl_sample_tabs"
+        app:layout_constraintTop_toBottomOf="@id/iv_off_tabs" />
+
+    <TextView
+        android:id="@+id/tv_tooman_bprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25dp"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:text="تومان"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/margin_15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tv_bprice_tabs"
+        app:layout_constraintTop_toBottomOf="@id/tv_sample_name_prd" />
+
+    <TextView
+        android:id="@+id/tv_bprice_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="120000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_tooman_bprice"
+        app:layout_constraintRight_toRightOf="@id/tv_sample_name_prd"
+        app:layout_constraintTop_toTopOf="@id/tv_tooman_bprice"/>
+
+    <TextView
+        android:id="@+id/tv_aprice_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_15dp"
+        android:text="100000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_tooman_bprice"
+        app:layout_constraintRight_toLeftOf="@id/tv_tooman_bprice"
+        app:layout_constraintTop_toTopOf="@id/tv_tooman_bprice" />
+
+    <TextView
+        android:id="@+id/tv_tooman_aprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_5dp"
+        android:text="تومان"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_aprice_tabs"
+        app:layout_constraintRight_toLeftOf="@id/tv_aprice_tabs"
+        app:layout_constraintTop_toTopOf="@id/tv_aprice_tabs" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="@color/green_4ac58e"
+        app:layout_constraintBottom_toBottomOf="@id/tv_bprice_tabs"
+        app:layout_constraintLeft_toLeftOf="@id/tv_bprice_tabs"
+        app:layout_constraintRight_toRightOf="@id/tv_bprice_tabs"
+        app:layout_constraintTop_toTopOf="@id/tv_bprice_tabs" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
