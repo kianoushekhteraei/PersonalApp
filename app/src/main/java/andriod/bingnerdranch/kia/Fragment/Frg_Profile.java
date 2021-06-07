@@ -34,7 +34,7 @@ import butterknife.OnClick;
 public class Frg_Profile extends Fragment {
 
     APIInterface request;
-//    PassingData passingData ;
+//  PassingData passingData ;
     //pushing into github
 
     SharedPreferences sharedPreferences;
@@ -82,7 +82,7 @@ public class Frg_Profile extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_profile, container, false);
         ButterKnife.bind(this, view);
-        request = APIClient.getApiClient("http://192.168.43.167/kia/").create(APIInterface.class);
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
 
         try {
             isFromEdit = getArguments().getBoolean("isFromEdit");
