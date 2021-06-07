@@ -35,6 +35,7 @@ public class Frg_Profile extends Fragment {
 
     APIInterface request;
 //    PassingData passingData ;
+    //pushing into github
 
     SharedPreferences sharedPreferences;
 
@@ -42,7 +43,7 @@ public class Frg_Profile extends Fragment {
     ImageView iv_frg_profile;
 
     private boolean isFromEdit = false;
-//    private boolean isFromSign = false;
+    private boolean isFromSign = false;
 
     @BindView(R.id.tv_logout)
     TextView tv_logout;
