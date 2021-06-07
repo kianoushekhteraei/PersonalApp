@@ -2,6 +2,7 @@ package andriod.bingnerdranch.kia.Project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.squareup.picasso.Picasso;
@@ -24,9 +26,6 @@ public class Act_Detail_Tabs extends AppCompatActivity {
     private APIInterface request;
 
     int id;
-
-
-    Bundle bundle;
 
     boolean flag = false;
 
@@ -61,8 +60,9 @@ public class Act_Detail_Tabs extends AppCompatActivity {
 
 
         id = Integer.parseInt(getIntent().getStringExtra(ID));
+//        Toast.makeText(getApplicationContext(), ""+ id, Toast.LENGTH_SHORT).show();
 
-        bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
 
         before_price = bundle.getString("before_price");
         tv_bprice_detail.setText(before_price);

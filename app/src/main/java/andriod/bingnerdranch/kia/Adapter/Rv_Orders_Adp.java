@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import andriod.bingnerdranch.kia.Fragment.Frg_Tab_Orders;
 import andriod.bingnerdranch.kia.Model.Tab_Orders_Mdl;
 import andriod.bingnerdranch.kia.Project.Act_Detail_Tabs;
+import andriod.bingnerdranch.kia.Project.MainActivity;
 import andriod.bingnerdranch.kia.R;
 
 public class Rv_Orders_Adp extends RecyclerView.Adapter<Rv_Orders_Adp.OrdersViewHolder>  {
@@ -53,7 +55,7 @@ public class Rv_Orders_Adp extends RecyclerView.Adapter<Rv_Orders_Adp.OrdersView
         holder_orders.tv_aprice_tabs.setText(data.get(position).getAfter_price());
         holder_orders.tv_off_tabs.setText(data.get(position).getOff());
 
-        Picasso.get().load(data.get(position).getLink_img()).into(holder_orders.iv_sample_tabs);
+        Glide.with(context).load(data.get(position).getLink_img()).into(holder_orders.iv_sample_tabs);
 
     }
     @Override
@@ -101,7 +103,6 @@ public class Rv_Orders_Adp extends RecyclerView.Adapter<Rv_Orders_Adp.OrdersView
 
             Intent intent = new Intent(context , Act_Detail_Tabs.class);
             intent.putExtra(Act_Detail_Tabs.ID,data.get(getAdapterPosition()).getId());
-            intent.putExtra(Frg_Tab_Orders.ID_delete_item_orders,data.get(getAdapterPosition()).getId());
             intent.putExtra("name" , data.get(getAdapterPosition()).getName_orders());
             intent.putExtra("before_price" , data.get(getAdapterPosition()).getBefore_price());
             intent.putExtra("link_img" , data.get(getAdapterPosition()).getLink_img());

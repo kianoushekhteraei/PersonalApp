@@ -12,8 +12,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_15dp"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center"
         android:src="@drawable/tom_hardy"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"

@@ -2,11 +2,13 @@ package andriod.bingnerdranch.kia.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,8 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 
+import andriod.bingnerdranch.kia.Fragment.Frg_Store;
 import andriod.bingnerdranch.kia.Fragment.Frg_Tab_Favourite;
 import andriod.bingnerdranch.kia.Model.Tab_Favourite_Mdl;
 
@@ -29,8 +34,7 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
     private ArrayList<Tab_Favourite_Mdl> data;
     ConstraintLayout cl_sample_tabs;
 
-
-    public Rv_Favourite_Adp(Context context, ArrayList<Tab_Favourite_Mdl> data,ConstraintLayout cl_sample_tabs) {
+    public Rv_Favourite_Adp(Context context, ArrayList<Tab_Favourite_Mdl> data, ConstraintLayout cl_sample_tabs) {
 
         this.context = context;
         this.data = data;
@@ -48,14 +52,12 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
     @Override
     public void onBindViewHolder(@NonNull FavouriteViewHolder holder_favourite, int position) {
 
+        holder_favourite.tv_id_delete_tabs.setText(data.get(position).getId());
         holder_favourite.tv_sample_name_prd.setText(data.get(position).getName_whish_list());
         holder_favourite.tv_bprice_tabs.setText(data.get(position).getBefore_price());
         holder_favourite.tv_aprice_tabs.setText(data.get(position).getAfter_price());
         holder_favourite.tv_off_tabs.setText(data.get(position).getOff());
-
-
         Picasso.get().load(data.get(position).getLink_img()).into(holder_favourite.iv_sample_tabs);
-
 
     }
 
@@ -82,10 +84,8 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
 
     public class FavouriteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-
-        TextView tv_sample_name_prd , tv_bprice_tabs , tv_aprice_tabs , tv_off_tabs;
-        ImageView iv_sample_tabs  ;
-
+        TextView tv_sample_name_prd, tv_bprice_tabs, tv_aprice_tabs, tv_off_tabs, tv_id_delete_tabs;
+        ImageView iv_sample_tabs;
 
         public FavouriteViewHolder(@NonNull View itemView) {
 
@@ -95,9 +95,8 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
             tv_bprice_tabs = itemView.findViewById(R.id.tv_bprice_tabs);
             tv_aprice_tabs = itemView.findViewById(R.id.tv_aprice_tabs);
             tv_off_tabs = itemView.findViewById(R.id.tv_off_tabs);
-
             iv_sample_tabs = itemView.findViewById(R.id.iv_sample_tabs);
-
+            tv_id_delete_tabs = itemView.findViewById(R.id.tv_id_delete_tabs);
 
             itemView.setOnClickListener(this);
 
@@ -108,7 +107,6 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
         public void onClick(View view) {
             Intent intent = new Intent(context, Act_Detail_Tabs.class);
             intent.putExtra(Act_Detail_Tabs.ID, data.get(getAdapterPosition()).getId());
-            intent.putExtra(Frg_Tab_Favourite.ID_delete_item_wish_list, data.get(getAdapterPosition()).getId());
             intent.putExtra("name", data.get(getAdapterPosition()).getName_whish_list());
             intent.putExtra("before_price", data.get(getAdapterPosition()).getBefore_price());
             intent.putExtra("link_img", data.get(getAdapterPosition()).getLink_img());
@@ -119,5 +117,4 @@ public class Rv_Favourite_Adp extends RecyclerView.Adapter<Rv_Favourite_Adp.Favo
             context.startActivity(intent);
         }
     }
-
 }

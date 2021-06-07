@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,13 +49,10 @@ public class Frg_Store extends Fragment {
         fragmentTransaction.commit();
         tv_title_orders.setTextColor(getResources().getColor(R.color.green_4ac58e));
         tv_title_favourite.setTextColor(getResources().getColor(R.color.white));
-
-
     }
 
     @OnClick(R.id.cl_favourite)
     public void cl_favourite() {
-
 
         fragment = new Frg_Tab_Favourite();
         FragmentManager fragmentManager = getChildFragmentManager();
@@ -63,8 +61,6 @@ public class Frg_Store extends Fragment {
         fragmentTransaction.commit();
         tv_title_orders.setTextColor(getResources().getColor(R.color.white));
         tv_title_favourite.setTextColor(getResources().getColor(R.color.green_4ac58e));
-
-
     }
 
 
@@ -73,11 +69,13 @@ public class Frg_Store extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_store, container, false);
         ButterKnife.bind(this, view);
+
         fragment = new Frg_Tab_Orders();
         FragmentManager fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fl_all_store, fragment);
         fragmentTransaction.commit();
+
         return view;
 
     }

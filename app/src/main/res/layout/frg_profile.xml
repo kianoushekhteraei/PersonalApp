@@ -17,8 +17,7 @@
             android:id="@+id/cl_scroll_frg_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-
+            
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_toolbar"
                 android:layout_width="match_parent"
@@ -58,16 +57,30 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_frg_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_img_frg_profile"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="@dimen/margin_25dp"
-                android:src="@drawable/tom_hardy"
-                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/circle_gray"
+                app:layout_constraintTop_toBottomOf="@id/cl_toolbar"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+                app:layout_constraintLeft_toLeftOf="parent">
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_frg_profile"
+                    android:layout_width="178dp"
+                    android:layout_height="178dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
             <TextView
                 android:id="@+id/tv_name_frg_profile"
@@ -75,20 +88,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5dp"
                 android:padding="@dimen/padding_10dp"
-                android:hint="TOM HARDY"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="@dimen/font_20sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toLeftOf="@id/iv_frg_profile"
-                app:layout_constraintRight_toRightOf="@id/iv_frg_profile"
-                app:layout_constraintTop_toBottomOf="@id/iv_frg_profile" />
+                app:layout_constraintLeft_toLeftOf="@id/cl_img_frg_profile"
+                app:layout_constraintRight_toRightOf="@id/cl_img_frg_profile"
+                app:layout_constraintTop_toBottomOf="@id/cl_img_frg_profile" />
 
             <TextView
                 android:id="@+id/tv_title_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_40dp"
+                android:layout_marginTop="@dimen/margin_30dp"
                 android:layout_marginRight="@dimen/margin_20dp"
                 android:text="شهر محل سکونت"
                 android:textColor="@color/black"
@@ -118,7 +130,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/margin_10dp"
-                    android:hint="مشهد"
                     android:textColor="@color/black"
                     android:textSize="@dimen/font_15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -161,7 +172,6 @@
                     android:id="@+id/tv_gender_frg_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="مرد"
                     android:textSize="@dimen/font_15sp"
                     android:textColor="@color/black"
                     android:layout_marginRight="@dimen/margin_10dp"
@@ -205,7 +215,6 @@
                     android:id="@+id/tv_number_frg_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="09388393291"
                     android:textSize="@dimen/font_15sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="@dimen/margin_5dp"
@@ -248,7 +257,6 @@
                     android:id="@+id/tv_email_frg_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="kiaet96@gmail.com"
                     android:textSize="@dimen/font_15sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="@dimen/margin_5dp"
@@ -286,13 +294,13 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_code"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent="0.9">
 
                 <TextView
                     android:id="@+id/tv_code_frg_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="2348789"
                     android:textSize="@dimen/font_15sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="@dimen/margin_10dp"

@@ -9,14 +9,21 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 
 import andriod.bingnerdranch.kia.Adapter.Rv_Favourite_Adp;
@@ -24,6 +31,8 @@ import andriod.bingnerdranch.kia.Model.Delete_Item_Tabs_Mdl;
 import andriod.bingnerdranch.kia.Model.Tab_Favourite_Mdl;
 import andriod.bingnerdranch.kia.Project.APIClient;
 import andriod.bingnerdranch.kia.Project.APIInterface;
+import andriod.bingnerdranch.kia.Project.Act_Detail_Tabs;
+import andriod.bingnerdranch.kia.Project.RecyclerItemClickListener;
 import andriod.bingnerdranch.kia.Project.SwipeHelper;
 import andriod.bingnerdranch.kia.R;
 
@@ -46,11 +55,8 @@ public  class Frg_Tab_Favourite extends Fragment {
     ArrayList<Tab_Favourite_Mdl> stringArrayList = new ArrayList<>();
     ConstraintLayout cl_sample_tabs;
 
-//    int id_delete_item_wish_list ;
-    String id_delete_item_wish_list = "8";
+    public static String ID_delete_item_wish_list =  "" ;
 
-
-    public static  String  ID_delete_item_wish_list = "id_delete_item_wish_list" ;
 
     @BindView(R.id.rv_favourite)
     RecyclerView rv_favourite;
@@ -60,9 +66,27 @@ public  class Frg_Tab_Favourite extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_tab_favourite, container, false);
         ButterKnife.bind(this, view);
-        request = APIClient.getApiClient("http://192.168.1.3/kia/").create(APIInterface.class);
-   //     id_delete_item_wish_list = Integer.parseInt(getActivity().getIntent().getStringExtra(ID_delete_item_wish_list));
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
         enableSwipeHelperAndUndo();
+
+
+//        if(getArguments() != null){
+//
+//            ID_delete_item_wish_list = getArguments().getString("id_delete");
+//
+//        }
+
+//        rv_favourite.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), rv_favourite, new RecyclerItemClickListener.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                Toast.makeText(getContext(),ID_delete_item_wish_list,Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onLongItemClick(View view, int position) {
+//
+//            }
+//        }));
 
         request.getData_favourite()
                 .subscribeOn(Schedulers.newThread())
@@ -93,6 +117,7 @@ public  class Frg_Tab_Favourite extends Fragment {
                     }
                 });
         return view;
+
     }
 
     public void enableSwipeHelperAndUndo() {
@@ -100,11 +125,10 @@ public  class Frg_Tab_Favourite extends Fragment {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
+                final int id_delete = viewHolder.getAdapterPosition();
+                final Tab_Favourite_Mdl item = favourite_adp.getData().get(id_delete);
 
-                final int position = viewHolder.getAdapterPosition();
-                final Tab_Favourite_Mdl item = favourite_adp.getData().get(position);
-
-                favourite_adp.removeItem(position);
+                favourite_adp.removeItem(id_delete);
                 Delete_Data_favourite();
 
 
@@ -113,8 +137,9 @@ public  class Frg_Tab_Favourite extends Fragment {
                     @Override
                     public void onClick(View view) {
 
-                        favourite_adp.restoreItem(item, position);
-                        rv_favourite.scrollToPosition(position);
+                        favourite_adp.restoreItem(item, id_delete);
+                        rv_favourite.scrollToPosition(id_delete);
+
                     }
                 });
 
@@ -131,7 +156,7 @@ public  class Frg_Tab_Favourite extends Fragment {
     private void Delete_Data_favourite() {
 
 
-        Call<Delete_Item_Tabs_Mdl> call = request.Delete_item_whish_list( id_delete_item_wish_list );
+        Call<Delete_Item_Tabs_Mdl> call = request.Delete_item_whish_list( ID_delete_item_wish_list );
 
         call.enqueue(new Callback<Delete_Item_Tabs_Mdl>() {
 

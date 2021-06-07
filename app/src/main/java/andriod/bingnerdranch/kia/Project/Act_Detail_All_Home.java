@@ -62,7 +62,7 @@ public class Act_Detail_All_Home extends AppCompatActivity {
         ButterKnife.bind(this);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        request = APIClient.getApiClient("http://192.168.43.167/kia/").create(APIInterface.class);
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
 
         iv_whish_detail_all_home = findViewById(R.id.iv_whish_detail_all_home);
         cl_detail_all_home = findViewById(R.id.cl_buy_detail_all_home);

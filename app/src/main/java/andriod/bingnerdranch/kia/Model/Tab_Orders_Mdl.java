@@ -2,13 +2,15 @@ package andriod.bingnerdranch.kia.Model;
 
 public class Tab_Orders_Mdl {
 
-    private String id , name_orders , before_price , 	after_price , 	off , description , link_img ;
 
-    public String getId() {
+    private Integer id ;
+    private String name_orders , before_price , 	after_price , 	off , description , link_img ;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

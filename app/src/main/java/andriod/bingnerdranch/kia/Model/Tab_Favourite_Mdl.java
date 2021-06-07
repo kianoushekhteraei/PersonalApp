@@ -2,7 +2,7 @@ package andriod.bingnerdranch.kia.Model;
 
 public class Tab_Favourite_Mdl {
 
-    private String id , name_whish_list , before_price , 	after_price , 	off , description , link_img  ;
+    private String id , name_whish_list, before_price, after_price, off, description, link_img;
 
     public String getId() {
         return id;

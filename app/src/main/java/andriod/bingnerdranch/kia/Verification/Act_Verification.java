@@ -17,6 +17,7 @@ import andriod.bingnerdranch.kia.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import es.dmoral.toasty.Toasty;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,8 +30,9 @@ public class Act_Verification extends AppCompatActivity {
     Button btn_verification;
     @BindView(R.id.edt_verification_Number)
     EditText edt_verification_Number;
-    @OnClick(R.id.btn_verification)
 
+
+    @OnClick(R.id.btn_verification)
     public void btn_verification() {
 
         Intent i = new Intent(Act_Verification.this, Act_Verify_Code.class);
@@ -47,7 +49,7 @@ public class Act_Verification extends AppCompatActivity {
         ButterKnife.bind(this);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        request = APIClient.getApiClient("http://192.168.1.3/kia/").create(APIInterface.class);
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
     }
 
     private void post_users_number() {
@@ -63,13 +65,15 @@ public class Act_Verification extends AppCompatActivity {
 
                 if (response.body().getResponse().equals("USER_REGISTER")) {
 
-                    Toast.makeText(Act_Verification.this, "این شماره تلفن قبلا استفاده شده است.", Toast.LENGTH_SHORT).show();
+                    Toasty.error(getApplicationContext(),"اطلاعات وارد شده صحیح نمی باشد.").show();
+
+
+                    Intent intent = new Intent(Act_Verification.this,Act_Verification.class);
+                    startActivity(intent);
+
 
 
                 } else if (response.body().getResponse().equals("SUCCESS")) {
-
-                    startActivity(new Intent(Act_Verification.this, Act_Verify_Code.class));
-                    finish();
 
 
                 } else if (response.body().getResponse().equals("WRONG")) {

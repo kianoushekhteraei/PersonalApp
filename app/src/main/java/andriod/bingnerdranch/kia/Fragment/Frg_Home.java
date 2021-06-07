@@ -97,7 +97,7 @@ public class Frg_Home extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_home, container, false);
-        request = APIClient.getApiClient("http://192.168.1.3/kia/").create(APIInterface.class);
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
         ButterKnife.bind(this, view);
         rv_new_prd.setHasFixedSize(true);
         rv_new_prd.setLayoutManager(new LinearLayoutManager(getContext(), rv_new_prd.HORIZONTAL, true));

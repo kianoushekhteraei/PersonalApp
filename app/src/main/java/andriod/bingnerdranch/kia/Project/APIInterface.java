@@ -50,14 +50,16 @@ public interface APIInterface {
 
     @POST("getData_user.php")
     Call<Info_Users_Mdl> GetInfoAccount(@Query("name_sign_up") String name_sign_up,
+//                                        @Query("image_sign_up") String image_sign_up,
                                         @Query("gender_sign_up") String gender_sign_up,
                                         @Query("city_sign_up") String city_sign_up,
-                                        @Query("email_sign_up") String email_sign_up,
-                                        @Query("code_sign_up") String code_sign_up);
+                                        @Query("code_sign_up") String code_sign_up,
+                                        @Query("email_sign_up") String email_sign_up);
 
     @POST("data_Profile.php")
     Call<Info_Edit_Profile_Mdl> GetInfoEdit_Profile(@Query("name_profile") String name_profile,
                                                     @Query("gender_profile") String gender_profile,
+//                                                    @Query("image_profile") String image_profile,
                                                     @Query("city_profile") String city_profile,
                                                     @Query("email_profile") String email_profile,
                                                     @Query("code_profile") String code_profile,
@@ -82,10 +84,10 @@ public interface APIInterface {
 
 
     @DELETE("delete_item_whish_list.php")
-    Call<Delete_Item_Tabs_Mdl>Delete_item_whish_list(@Query("id") String  id_delete_item_orders);
+    Call<Delete_Item_Tabs_Mdl>Delete_item_whish_list(@Query("id") String getID_delete_item_wish_list);
 
 
     @DELETE("delete_item_orders.php")
-    Call<Delete_Item_Tabs_Mdl> Delete_item_Orders(@Query("id") String id_delete_item_orders );
+    Call<Delete_Item_Tabs_Mdl> Delete_item_Orders(@Query("id") Integer ID_delete_item_orders );
 
 }

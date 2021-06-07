@@ -46,12 +46,7 @@ public class Frg_Tab_Orders extends Fragment {
     ArrayList<Tab_Orders_Mdl> stringArrayList = new ArrayList<>();
     ConstraintLayout cl_sample_tabs;
 
-
- //   int id_delete_item_orders ;
-
-    String id_delete_item_orders = "5";
-
-    public static String ID_delete_item_orders = "id_delete_item_orders";
+    public static Integer ID_delete_item_orders;
 
     @BindView(R.id.rv_orders)
     RecyclerView rv_orders;
@@ -61,8 +56,7 @@ public class Frg_Tab_Orders extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frg_tab_orders, container, false);
         ButterKnife.bind(this, view);
-        request = APIClient.getApiClient("http://192.168.1.3/kia/").create(APIInterface.class);
-  //      id_delete_item_orders = Integer.parseInt(getActivity().getIntent().getStringExtra(ID_delete_item_orders));
+        request = APIClient.getApiClient("http://192.168.1.4/kia/").create(APIInterface.class);
         rv_orders.setHasFixedSize(true);
         rv_orders.setLayoutManager(new LinearLayoutManager(getContext(), rv_orders.VERTICAL, false));
         enableSwipeHelperAndUndo();
@@ -113,8 +107,7 @@ public class Frg_Tab_Orders extends Fragment {
                 Delete_Data_orders();
 
 
-                Snackbar snackbar = Snackbar
-                        .make(getActivity().findViewById(android.R.id.content), "گزینه انتخاب شده حذف شد", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "گزینه انتخاب شده حذف شد", Snackbar.LENGTH_LONG);
                 snackbar.setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -137,7 +130,8 @@ public class Frg_Tab_Orders extends Fragment {
     private void Delete_Data_orders() {
 
 
-        Call<Delete_Item_Tabs_Mdl> call = request.Delete_item_Orders( id_delete_item_orders );
+
+        Call<Delete_Item_Tabs_Mdl> call = request.Delete_item_Orders( ID_delete_item_orders );
 
         call.enqueue(new Callback<Delete_Item_Tabs_Mdl>() {
 
