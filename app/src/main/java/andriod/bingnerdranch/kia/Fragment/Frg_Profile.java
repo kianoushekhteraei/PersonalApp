@@ -42,8 +42,8 @@ public class Frg_Profile extends Fragment {
     TextView tv_name_frg_profile, tv_city_frg_profile, tv_gender_frg_profile, tv_number_frg_profile, tv_email_frg_profile, tv_code_frg_profile;
     ImageView iv_frg_profile;
 
-    private boolean isFromEdit = false;
-    private boolean isFromSign = false;
+    private boolean isFromEdit = false ;
+    private boolean isFromSign = true ;
 
     @BindView(R.id.tv_logout)
     TextView tv_logout;
