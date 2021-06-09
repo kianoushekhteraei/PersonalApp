@@ -106,13 +106,7 @@ public class Frg_Profile extends Fragment {
 //            String city_profile = getArguments().getString("city_sign_up");
 //            String email_profile = getArguments().getString("email_sign_up");
 //            String code_profile = getArguments().getString("code_sign_up");
-
-//            String name_profile = sharedPreferences.getString("name_sign_up", "a");
-//            String gender_profile = sharedPreferences.getString("gender_sign_up", "b");
-//            String city_profile = sharedPreferences.getString("city_sign_up", "c");
-//            String email_profile = sharedPreferences.getString("email_sign_up", "d");
-//            String code_profile = sharedPreferences.getString("code_sign_up", "e");
-
+        git
 //            tv_name_frg_profile.setText(name_profile);
 //            tv_gender_frg_profile.setText(gender_profile);
 //            tv_city_frg_profile.setText(city_profile);
