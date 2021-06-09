@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     APIInterface request;
 
-
     private String showFrg = "home";
 
     @OnClick(R.id.cl_profile)
@@ -189,12 +188,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-//    @Override
-//    public void sendData(String data) {
-//        data.equals(name_sign_up);
-//    }
 }
 
 

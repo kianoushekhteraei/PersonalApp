@@ -35,7 +35,6 @@ public class Frg_Profile extends Fragment {
 
     APIInterface request;
 //  PassingData passingData ;
-    //pushing into github
 
     SharedPreferences sharedPreferences;
 
@@ -93,7 +92,7 @@ public class Frg_Profile extends Fragment {
 
         //user from main not edit
         //show old values
-        if (isFromSign) {
+//        if (isFromSign) {
             tv_name_frg_profile = view.findViewById(R.id.tv_name_frg_profile);
             tv_city_frg_profile = view.findViewById(R.id.tv_city_frg_profile);
             tv_gender_frg_profile = view.findViewById(R.id.tv_gender_frg_profile);
@@ -108,18 +107,18 @@ public class Frg_Profile extends Fragment {
 //            String email_profile = getArguments().getString("email_sign_up");
 //            String code_profile = getArguments().getString("code_sign_up");
 
-            String name_profile = sharedPreferences.getString("name_sign_up", "a");
-            String gender_profile = sharedPreferences.getString("gender_sign_up", "b");
-            String city_profile = sharedPreferences.getString("city_sign_up", "c");
-            String email_profile = sharedPreferences.getString("email_sign_up", "d");
-            String code_profile = sharedPreferences.getString("code_sign_up", "e");
+//            String name_profile = sharedPreferences.getString("name_sign_up", "a");
+//            String gender_profile = sharedPreferences.getString("gender_sign_up", "b");
+//            String city_profile = sharedPreferences.getString("city_sign_up", "c");
+//            String email_profile = sharedPreferences.getString("email_sign_up", "d");
+//            String code_profile = sharedPreferences.getString("code_sign_up", "e");
 
-            tv_name_frg_profile.setText(name_profile);
-            tv_gender_frg_profile.setText(gender_profile);
-            tv_city_frg_profile.setText(city_profile);
-            tv_email_frg_profile.setText(email_profile);
-            tv_code_frg_profile.setText(code_profile);
-        }
+//            tv_name_frg_profile.setText(name_profile);
+//            tv_gender_frg_profile.setText(gender_profile);
+//            tv_city_frg_profile.setText(city_profile);
+//            tv_email_frg_profile.setText(email_profile);
+//            tv_code_frg_profile.setText(code_profile);
+//        }
         if (isFromEdit) {
             //isFromEdit is true and we must do changes
             tv_name_frg_profile = view.findViewById(R.id.tv_name_frg_profile);
@@ -151,20 +150,4 @@ public class Frg_Profile extends Fragment {
 
         return view;
     }
-
-//    public interface PassingData{
-//
-//        public void sendData(String data);
-//    }
-//
-//    @Override
-//    public void onAttach(@NonNull Context context) {
-//        super.onAttach(context);
-//        passingData = (PassingData) context ;
-//    }
-//
-//    public void passData(String data) {
-//        passingData.sendData(data);
-//    }
-
 }
