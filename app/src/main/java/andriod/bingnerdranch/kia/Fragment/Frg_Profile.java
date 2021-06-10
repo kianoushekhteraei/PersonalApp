@@ -43,6 +43,7 @@ public class Frg_Profile extends Fragment {
 
     private boolean isFromEdit = false ;
     private boolean isFromSign = true ;
+    //upload on gitthub
 
     @BindView(R.id.tv_logout)
     TextView tv_logout;
